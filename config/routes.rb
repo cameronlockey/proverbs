@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'verses/index'
 
-  root 'verses#index'
+  root 'pages#home'
   get 'pages/home'
 
   get 'auth/:provider/callback', to: 'sessions#create'

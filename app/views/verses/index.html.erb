@@ -1,32 +1,4 @@
-<!-- Masthead -->
-<header class="masthead text-white text-center">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-9 mx-auto">
-        <h1 class="mb-5">
-          <%= t('headline') %>
-        </h1>
-      </div>
-      <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-        <form>
-          <div class="form-row">
-            <% if current_user %>
-              <div class="col-12 col-md-8 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Search for verses or categories...">
-              </div>
-              <div class="col-12 col-md-4">
-                <button href="/auth/google_oauth2" type="submit" class="btn btn-block btn-lg btn-primary">Search</button>
-              </div>
-            <% else %>
-              <a href="<%= ENV.fetch('GOOGLE_OAUTH2_REDIRECT_URL') %>" class="btn btn-block btn-lg btn-primary">Sign in with Google</a>
-            <% end %>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</header>
+<%= render 'search-masthead' %>
 
 <!-- Verses -->
 <section class="bg-light">
