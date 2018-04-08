@@ -1,0 +1,6 @@
+<% if @chapter.to_i > 1 %>
+  <a href="<%= @previous_chapter_path %>#t" title="Previous" class="t-md"><i class="fa fa-2x fa-angle-left" style="line-height: 20px;"></i></a>
+<% end %>
+<% if @chapter.to_i < 31 %>
+  <a href="<%= @next_chapter_path %>#t" title="Next" class="t-md" style="line-height: 20px;"><i class="fa fa-2x fa-angle-right" style="line-height: 20px;"></i></a>
+<% end %>

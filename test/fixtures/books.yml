@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  pages: 
+  chapters: 
+  use_chapters: 
+  email_notifications: MyString
+  bool: MyString
+  start_at: 2018-01-25 13:29:07
+  finish_at: 2018-01-25 13:29:07
+
+two:
+  title: MyString
+  pages: 
+  chapters: 
+  use_chapters: 
+  email_notifications: MyString
+  bool: MyString
+  start_at: 2018-01-25 13:29:07
+  finish_at: 2018-01-25 13:29:07

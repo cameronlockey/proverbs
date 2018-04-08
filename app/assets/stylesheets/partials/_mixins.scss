@@ -1,0 +1,21 @@
+// Mixins
+// Background Cover Mixin
+@mixin background-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+// Font Mixins
+@mixin font-body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@mixin font-display {
+  font-family: $font-display, 'Times New Roman', Times, serif;
+}
+
+@mixin font-serif {
+  font-family: $font-serif, 'Times New Roman', Times, serif;
+}

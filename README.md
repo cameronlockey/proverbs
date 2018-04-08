@@ -1,2 +1,2 @@
-# proverbs
-An app for studying the Book of Proverbs.
+# rails-base-app
+A base Rails &amp; Bootstrap app with Vagrant.

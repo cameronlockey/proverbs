@@ -1,0 +1,12 @@
+fieldset {
+  legend {
+    @extend .padt-sm;
+    @extend .padb-xxs;
+    @extend .marb-xs;
+    @extend .fineb-light;
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+}

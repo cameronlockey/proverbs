@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 padv-sm">
+      <% if notice %>
+        <p id="notice" class="alert alert-success"><%= notice %></p>
+      <% end %>
+    </div>
+
+    <div class="col-8 col-md-8">
+      <h4>Upcoming Assignments</h4>
+      <% @dates.each do |date| %>
+      <div class="card marb-sm">
+        <div class="card-header strong">
+          <%= date.strftime('%A, %b %d') %>
+        </div>
+        <div class="card-block">
+          <table class="table">
+            <tr>
+              <td>Desiring God</td>
+              <td>Chapter 1</td>
+              <td>Unread</td>
+            </tr>
+            <tr>
+              <td>The Problem of Pain</td>
+              <td>Chapter 4</td>
+              <td>Unread</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="col-4 col-md-4">
+      <div>
+        <h4 class="pull-left">Books</h4>
+        <a class="pull-right" href="/books/new" title="New Book"><i class="fa fa-plus-circle fa-2x"></i></a>
+      </div>
+
+      <div class="clear">
+        <% @books.each do |book| %>
+        <div class="fineb-lighter padv-xs clearfix">
+          <div class="pull-left">
+            <div><%= book.title %></div>
+            <div class="t-sm t-gray italic">Goal: <%= book.finish_at.strftime('%b %d, %Y') %></div>
+          </div>
+          <div class="pull-right padt-xs">
+            <button id="btnGroupDrop-<%= book.id %>" type="button" class="btn btn-tertiary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="caret"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop-<%= book.id %>">
+              <%= link_to 'View Schedule', book, { class: 'dropdown-item' } %>
+              <%= link_to 'Edit', edit_book_path(book), { class: 'dropdown-item' } %>
+              <%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item' %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

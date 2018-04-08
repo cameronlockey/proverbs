@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  all_day: false
+  start_at: 2018-01-25 13:59:30
+  end_at: 2018-01-25 13:59:30
+  alert_at: 2018-01-25 13:59:30
+  completed_at: 2018-01-25 13:59:30
+  deleted_at: 2018-01-25 13:59:30
+
+two:
+  title: MyString
+  all_day: false
+  start_at: 2018-01-25 13:59:30
+  end_at: 2018-01-25 13:59:30
+  alert_at: 2018-01-25 13:59:30
+  completed_at: 2018-01-25 13:59:30
+  deleted_at: 2018-01-25 13:59:30

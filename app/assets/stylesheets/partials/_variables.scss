@@ -1,0 +1,78 @@
+// Variables
+
+// Restated Bootstrap Variables
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+$yella: #f7df2c !default;
+
+$primary: $blue !default;
+$secondary: $gray-600 !default;
+$tertiary: lighten($blue, 20%);
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+
+$font-display: 'Playfair Display';
+$font-sans: 'Lato';
+$font-serif: 'Georgia';
+
+$border-radius-base: 4;
+
+$font-size-base: 18px;
+$font-size-xxsmall: $font-size-base * 0.5;
+$font-size-xsmall: $font-size-base * 0.65;
+$font-size-small: $font-size-base * 0.85;
+$font-size-medium: $font-size-base * 1.25;
+$font-size-large: $font-size-base * 1.85;
+$font-size-xlarge: $font-size-base * 2;
+$font-size-xxlarge: $font-size-base * 3;
+$font-size-mega: $font-size-base * 4;
+
+$font-size-h1:              floor(($font-size-base * 2.25));
+$font-size-h2:              floor(($font-size-base * 1.95));
+$font-size-h3:              ceil(($font-size-base * 1.7));
+$font-size-h4:              ceil(($font-size-base * 1.3));
+$font-size-h5:              ceil(($font-size-base * 1.26));
+$font-size-h6:              ceil(($font-size-base * 0.85));
+
+$padding-base-vertical:     15px;
+$padding-base-horizontal:   15px;
+
+$padding-xlarge-vertical:   80px;
+$padding-xlarge-horizontal: 80px;
+
+$padding-large-vertical:    50px;
+$padding-large-horizontal:  50px;
+
+$padding-medium-vertical:   40px;
+$padding-medium-horizontal: 40px;
+
+$padding-small-vertical:    20px;
+$padding-small-horizontal:  20px;
+
+$padding-xs-vertical:       10px;
+$padding-xs-horizontal:     10px;
