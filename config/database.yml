@@ -26,6 +26,6 @@ test:
 
 production:
   <<: *default
-  database: proverbs_production
-  username: proverbsdddd
-  password: BTPKJd2ypmc2
+  database: CLEARDB_DATABASE_URL
+  username: b34a81738f6a03
+  password: 4b2897bd
