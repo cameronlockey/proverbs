@@ -59,7 +59,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'pry-rails'
   gem 'pry-byebug'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
 end
