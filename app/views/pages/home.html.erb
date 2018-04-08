@@ -19,7 +19,7 @@
                 <button href="/auth/google_oauth2" type="submit" class="btn btn-block btn-lg btn-primary">Get Started</button>
               </div>
             <% else %>
-              <a href="/auth/google_oauth2" class="btn btn-block btn-lg btn-primary">Sign in with Google</a>
+              <a href="<%= ENV.fetch('GOOGLE_OAUTH2_REDIRECT_URL') %>" class="btn btn-block btn-lg btn-primary">Sign in with Google</a>
             <% end %>
           </div>
         </form>
