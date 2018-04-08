@@ -40,4 +40,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.synced_folder ".", "/vagrant", type: "nfs", create: true
+
+  # config.push.define "heroku" do |push|
+  #   push.app = "my_application"
+  # end
 end
