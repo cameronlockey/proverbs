@@ -26,6 +26,6 @@ test:
 
 production:
   <<: *default
-  database: CLEARDB_DATABASE_URL
+  database: DATABASE_URL
   username: b34a81738f6a03
   password: 4b2897bd
