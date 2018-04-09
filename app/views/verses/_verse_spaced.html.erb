@@ -1,3 +1,3 @@
   <div class="my-1 border-bottom">
-    <%= verse.verse %> <%= verse.text %>
+    <%= "#{verse.chapter}:" if @is_search %><%= verse.verse %> <%= sanitize bold_terms(verse.text, @search_terms) %>
   </div>
