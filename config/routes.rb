@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'chapter/:chapter', to: 'verses#chapter'
   get 'chapter/:chapter/:display', to: 'verses#chapter'
   post 'search', to: 'verses#search'
+  get 'search', to: 'verses#search'
 
   get 'account', to: 'users#show', as: 'account'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

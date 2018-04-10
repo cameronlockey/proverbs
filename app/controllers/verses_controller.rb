@@ -2,6 +2,7 @@ class VersesController < ApplicationController
 
   before_action :set_chapter
   before_action :set_chapter_paths
+  before_action :set_query
 
   def index
     verses
@@ -20,7 +21,6 @@ class VersesController < ApplicationController
   end
 
   def search
-    set_keywords if params[:keywords]
     verses
     set_display :spaced
     @is_search = true
@@ -40,11 +40,13 @@ class VersesController < ApplicationController
     @display_view ||= :inline
   end
 
-  def set_keywords
-    @keywords = []
-    @search_terms = params[:keywords].split(' ').compact
-    @search_terms.each do |word|
-      @keywords.push "text LIKE '%#{word}%'"
+  def set_query
+    @query = []
+    if params[:q]
+      @search_terms = params[:q].split(' ').compact
+      @search_terms.each do |word|
+        @query.push "text LIKE '%#{word}%'"
+      end
     end
   end
 
@@ -59,15 +61,15 @@ class VersesController < ApplicationController
 
   def verses
     @verses = Book.where(name: 'Proverbs').first.verses.where(version: version)
-    @verses = @verses.where(chapter: @chapter) if @chapter && params[:keywords].empty?
-    if !@keywords.empty?
+    @verses = @verses.where(chapter: @chapter) if @chapter && @query.empty?
+    if !@query.empty?
       counter = 0
       loop do
-        break if counter == @keywords.length
+        break if counter == @query.length
         if counter == 0
-          @verses = @verses.where(@keywords[counter])
+          @verses = @verses.where(@query[counter])
         else
-          @verses = @verses.or(Verse.where(@keywords[counter]))
+          @verses = @verses.or(Verse.where(@query[counter]))
         end
         counter += 1
       end

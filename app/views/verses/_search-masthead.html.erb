@@ -17,10 +17,10 @@
         </h1>
       </div>
       <div class="col-md-7 col-lg-6 col-xl-5 mx-auto">
-        <%= form_tag(search_path) do %>
+        <%= form_tag('/search', { method: 'get' }) do %>
           <div class="form-row">
             <div class="col-12 col-md-8 mb-2 mb-md-0">
-              <%= text_field_tag :keywords, '', class: 'form-control form-control-lg', placeholder: 'Search verses or topics...' %>
+              <%= text_field_tag :q, '', class: 'form-control form-control-lg', placeholder: 'Search verses or topics...' %>
             </div>
             <div class="col-12 col-md-4">
               <%= submit_tag 'Search', class: 'btn btn-block btn-lg btn-primary' %>
