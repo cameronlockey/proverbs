@@ -3,15 +3,25 @@ class VersesController < ApplicationController
   before_action :set_chapter
   before_action :set_chapter_paths
   before_action :set_query
+  before_action :set_default_display_view
+
+  helper_method :display_partial
+  helper_method :display_spaced?
+  helper_method :display_inline?
+
+  DEFAULT_DISPLAY_VIEW = :inline
+  DISPLAY_PARTIAL = {
+    inline: 'verse_inline',
+    spaced: 'verse_spaced',
+  }
 
   def index
     verses
-    set_display(params[:display])
   end
 
   def chapter
     verses
-    set_display(params[:display])
+    set_display params[:display]
     render :index
   end
 
@@ -29,15 +39,23 @@ class VersesController < ApplicationController
 
   private
 
-  def set_display(display_view)
-    @is_search = false
-    session[:display_view] = display_view.to_sym
-    @display_view = session[:display_view]
-    @display_partial = (@display_view == :inline) ? 'verse_inline' : 'verse_spaced'
+  def display_view
+    session[:display_view].to_sym
   end
 
-  def display_view
-    @display_view ||= :inline
+  def set_display(new_display_view)
+    return unless new_display_view
+    @is_search = false
+    session[:display_view] = new_display_view
+  end
+
+  def display_partial
+    DISPLAY_PARTIAL[display_view.to_sym]
+  end
+
+  def set_default_display_view
+    return if session[:display_view]
+    session[:display_view] = DEFAULT_DISPLAY_VIEW
   end
 
   def set_query
@@ -79,6 +97,14 @@ class VersesController < ApplicationController
 
   def version
     @version ||= Version.where(abbreviation: session[:version])
+  end
+
+  def display_spaced?
+    display_view == :spaced
+  end
+
+  def display_inline?
+    display_view == :inline
   end
 
 end

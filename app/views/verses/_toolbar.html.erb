@@ -1,7 +1,7 @@
   <div id="t" class="toolbar border-bottom clearfix my-3">
     <div class="d-flex align-items-center justify-content-around">
-      <a href="<%= "/chapter/#{@chapter}/inline#t" %>" title="Inline" class="<%= 'active' if display_view == 'inline' %>"><i class="fa fa-2x fa-align-justify" style="line-height: 20px;"></i></a>
-      <a href="<%= "/chapter/#{@chapter}/spaced#t" %>" title="Spaced" class="<%= 'active' if display_view == 'spaced' %>"><i class="fa fa-2x fa-bars" style="line-height: 20px;"></i></a>
+      <a href="<%= "/chapter/#{@chapter}/inline" %>" title="Inline" class="<%= 'active' if @display_view == 'inline' %>"><i class="fa fa-2x fa-align-justify" style="line-height: 20px;"></i></a>
+      <a href="<%= "/chapter/#{@chapter}/spaced" %>" title="Spaced" class="<%= 'active' if @display_view == 'spaced' %>"><i class="fa fa-2x fa-bars" style="line-height: 20px;"></i></a>
       <div class="dropdown show">
           <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="t-primary t-md"><%= @chapter %> <i class="caret"></i></span>
@@ -9,7 +9,7 @@
 
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <% (1..31).each do |ch| %>
-            <a class="dropdown-item" href="/chapter/<%= ch %>#t"><%= ch %></a>
+            <a class="dropdown-item" href="/chapter/<%= ch %>"><%= ch %></a>
             <% end %>
           </div>
         </div>

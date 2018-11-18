@@ -12,13 +12,13 @@
 
             <h2>
               Proverbs
-              <% if @display_view == 'spaced' %>
+              <% if display_spaced? %>
                 <span class="bold t-lg pr-1"><%= @verses.first.chapter %></span>
               <% end %>
             </h2>
 
             <% @verses.each do |v| %>
-              <%= render @display_partial, verse: v %>
+              <%= render display_partial, verse: v %>
             <% end %>
 
             <div class="py-2">
